@@ -18,7 +18,7 @@ install:
 
 script:
 - npm start
-- npm build
+- npm run build
 
 branches:
   only:
