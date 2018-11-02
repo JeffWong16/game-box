@@ -34,6 +34,10 @@ request('http://ce.ys168.com/f_ht/ajcx/ml.aspx?cz=ml_dq&_dlmc=renxufeng&_dlmm=',
   Promise.all(PromiseArr).then(() => {
     injectText = '];';
     fs.appendFileSync(distPath, injectText);
+    console.log(' 资源已下载完成！');
+  }).catch((e) => {
+    console.log(e);
+    console.log('资源获取失败！！！');
   })
 });
 
