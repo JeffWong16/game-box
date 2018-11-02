@@ -18,7 +18,6 @@ install:
 
 script:
 - npm start
-- cat src/data.js
 - npm run build
 
 branches:
