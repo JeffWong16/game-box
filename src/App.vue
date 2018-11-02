@@ -14,7 +14,6 @@
 
 <script>
 import lists from './data.js';
-console.log(lists, 'ceshi')
 import List from './components/List.vue';
 import logo from './assets/logo.png'
 export default {
