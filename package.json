@@ -31,6 +31,9 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
+    "globals": {
+      "Velocity":true
+    },
     "rules": {},
     "parserOptions": {
       "parser": "babel-eslint"
