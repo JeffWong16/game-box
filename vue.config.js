@@ -1,5 +1,5 @@
 module.exports = {
-  baseUrl: 'https://jeffwong16.github.io/game-box/',
+  baseUrl: process.env.NODE_ENV === 'production  '? 'https://jeffwong16.github.io/game-box/': '',
   configureWebpack: {
 
   }

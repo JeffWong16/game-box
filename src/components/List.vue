@@ -35,7 +35,8 @@ export default {
   transition: all 1s;
 }
 .list-enter, .list-leave-to {
-  transition: all 1s;
+  opacity: 0;
+  /* transition: all 1s; */
 }
 </style>
 
