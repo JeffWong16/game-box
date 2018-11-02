@@ -2,10 +2,10 @@
   <div id="app">
     <div class="first"></div>
     <div class="">
-      <img :src="logo" alt="" class="logo" :class="{'logo-active':this.search }">
-      <input class="search-input" :class="{'search-input-active':this.search }" type="text" v-model="search">
+      <img :src="logo" alt="" class="logo" :class="{'logo-active': this.searched }">
+      <input class="search-input" :class="{'search-input-active':this.searched }" type="text" v-model="search">
       <div class="source">数据来源：<a href="http://renxufeng.ys168.com/">http://renxufeng.ys168.com/</a></div>   
-      <div class="result-count" v-if="this.search">共<span>{{lists.length}}</span>条结果</div>
+      <div class="result-count" v-if="this.searched">共<span>{{lists.length}}</span>条结果</div>
       <List :lists="lists"/>
     </div>
     <div class="second"></div>
@@ -21,6 +21,7 @@ export default {
   data() {
     return {
       search: '',
+      searched: false,
       logo,
     }
   },
@@ -31,10 +32,16 @@ export default {
   },
   computed: {
     lists() {
-
-      return this.search? lists.filter(d => d.text.indexOf(this.search)> -1): [];
+      return this.search? lists.filter(d => d.text.indexOf(this.search)> -1): this.searched? lists :[];
     }
-  }
+  },
+  watch: {
+    search: function(val) {
+      if (val) {
+        this.searched = true;
+      }
+    }
+  },
 }
 </script>
 
